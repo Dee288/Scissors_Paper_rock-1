@@ -1,0 +1,71 @@
+import random
+
+user_score = int(0)
+comp_score = int(0)
+score_limit = 7
+
+
+while user_score != score_limit or comp_score != score_limit:
+
+    user: str = input(str("pls enter your guess, rock/paper/scissors:"))
+
+    my_list = "rock", "paper", "scissors"
+    comp_guess = random.choice(my_list)
+    print("the computer chose", comp_guess)
+
+    if comp_guess == "rock" and user == "rock":
+     print("Tie!!")
+
+    if comp_guess == "paper" and user == "paper":
+        print("Tie!!")
+
+    if comp_guess == "scissors" and user == "scissors":
+        print("Tie!!")
+
+    if comp_guess == "paper" and user == "rock":
+        print("computer scores")
+
+        comp_score = comp_score + 1
+        print("the comp score is:", comp_score)
+
+    if comp_guess == "rock" and user == "paper":
+        print("you scored")
+
+        user_score = user_score + 1
+        print("the user score is:", user_score)
+
+    if comp_guess == "rock" and user == "scissors":
+        print("computer scored")
+
+        comp_score = int(comp_score) + 1
+        print("the comp score is:", comp_score)
+
+    if comp_guess == "scissors" and user == "rock":
+        print("you scored")
+
+        user_score = user_score + 1
+        print("the user score is:", user_score)
+
+    if comp_guess == "paper" and user == "scissors":
+        print("you scored")
+
+        user_score = user_score + 1
+        print("the user score is:", user_score)
+
+    if comp_guess == "scissors" and user == "paper":
+        print("computer scored")
+
+        comp_score = int(comp_score) + 1
+        print("the comp score is:", comp_score)
+
+        comp_guess = random.choice(my_list)
+
+    if user_score == score_limit:
+        print("hurray you won")
+
+        break
+
+    elif comp_score == score_limit:
+        print("sorry, the computer won")
+
+    break
